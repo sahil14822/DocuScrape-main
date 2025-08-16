@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Download, Eye } from "lucide-react";
-import type { ScrapeJob } from "@shared/schema";
+import type { ScrapeJob } from "@/types/schema";
 
 interface SuccessStateProps {
   job: ScrapeJob;

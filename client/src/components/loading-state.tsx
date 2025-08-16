@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Check, Loader2 } from "lucide-react";
-import type { ScrapeJob } from "@shared/schema";
+import type { ScrapeJob } from "@/types/schema";
 
 interface LoadingStateProps {
   job: ScrapeJob;

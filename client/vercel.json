@@ -18,16 +18,5 @@
       "src": "/(.*)",
       "dest": "/index.html"
     }
-  ],
-  "functions": {
-    "api/scrape.ts": {
-      "maxDuration": 60
-    },
-    "api/scrape/[id].ts": {
-      "maxDuration": 10
-    },
-    "api/documents.ts": {
-      "maxDuration": 10
-    }
-  }
+  ]
 }

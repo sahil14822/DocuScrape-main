@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
-import type { ScrapeJob, InsertScrapeJob } from "@shared/schema";
+import type { ScrapeJob, InsertScrapeJob } from "@/types/schema";
 
 interface UrlInputFormProps {
   onJobCreated: (job: ScrapeJob) => void;

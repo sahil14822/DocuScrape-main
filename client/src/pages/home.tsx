@@ -4,7 +4,7 @@ import UrlInputForm from "@/components/url-input-form";
 import LoadingState from "@/components/loading-state";
 import SuccessState from "@/components/success-state";
 import RecentDocuments from "@/components/recent-documents";
-import type { ScrapeJob } from "@shared/schema";
+import type { ScrapeJob } from "@/types/schema";
 
 export default function Home() {
   const [currentJob, setCurrentJob] = useState<ScrapeJob | null>(null);

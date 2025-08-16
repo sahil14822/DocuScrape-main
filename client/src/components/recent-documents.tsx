@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Download, Trash2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
-import type { ScrapeJob } from "@shared/schema";
+import type { ScrapeJob } from "@/types/schema";
 
 export default function RecentDocuments() {
   const queryClient = useQueryClient();
