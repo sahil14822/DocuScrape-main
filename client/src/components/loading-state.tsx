@@ -11,18 +11,25 @@ interface LoadingStateProps {
 }
 
 export default function LoadingState({ job, onJobCompleted, onNewScrape }: LoadingStateProps) {
-  const { data: currentJob, isError } = useQuery<ScrapeJob>({
+  const { data: currentJob, isError, refetch } = useQuery<ScrapeJob>({
     queryKey: ["/api/scrape", job.id],
-    refetchInterval: (data) => {
-      // Stop polling if job is completed or failed
-      if (data?.status === "completed" || data?.status === "failed") {
-        return false;
-      }
-      return 2000; // Poll every 2 seconds
-    },
+    refetchInterval: false, // Disable automatic polling
   });
 
   const actualJob = currentJob || job;
+
+  // Manual polling effect
+  useEffect(() => {
+    if (actualJob.status === "completed" || actualJob.status === "failed") {
+      return; // Stop polling if job is done
+    }
+
+    const interval = setInterval(() => {
+      refetch();
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [actualJob.status, refetch]);
 
   useEffect(() => {
     if (actualJob.status === "completed") {
